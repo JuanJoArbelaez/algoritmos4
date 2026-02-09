@@ -1,0 +1,20 @@
+class Nodo:
+    def __init__(self, nombre, cedula):
+        self.nombre = nombre
+        self.cedula = cedula
+        self.siguiente = None
+
+class Lista:
+    def __init__(self):
+        self.cabeza = None
+        
+    def agregarNodoAlfinal(self, nombre, cedula):
+        nuevo_nodo = Nodo(nombre, cedula)
+        if not self.cabeza:
+            self.cabeza = nuevo_nodo
+        else:
+            actual = self.cabeza
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nuevo_nodo
+    
