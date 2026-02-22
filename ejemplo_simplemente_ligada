@@ -10,11 +10,23 @@ class Lista:
         
     def agregarNodoAlfinal(self, nombre, cedula):
         nuevo_nodo = Nodo(nombre, cedula)
-        if not self.cabeza:
+        if self.cabeza == None:
             self.cabeza = nuevo_nodo
         else:
             actual = self.cabeza
-            while actual.siguiente:
+            while actual.siguiente != None:
                 actual = actual.siguiente
             actual.siguiente = nuevo_nodo
-    
+        print("Nodo agregado exitósamente.")
+
+    def mostrar(self):
+        actual = self.cabeza
+        while actual != None:
+            print(f"Nombre: {actual.nombre}, Cédula: {actual.cedula}")
+            actual = actual.siguiente
+
+lista = Lista() 
+lista.agregarNodoAlfinal("Juan", 12345)
+lista.mostrar()
+
+estudiante2 = Estudiante(2222, "María", 35789)
